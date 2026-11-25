@@ -38,9 +38,13 @@ analytics:
   admin:
     cache-seconds: ${ANALYTICS_ADMIN_CACHE_SECONDS:60}
   websocket:
-    # true => el handshake exige ?token=<JWT de Azure>. false => abierto (solo demos locales)
     require-auth: ${ANALYTICS_WS_REQUIRE_AUTH:true}
     interval-ms: 2000
+    api-gateway:
+      enabled: ${ANALYTICS_WS_GATEWAY_ENABLED:false}
+      endpoint: ${ANALYTICS_WS_GATEWAY_ENDPOINT:}
+      region: ${AWS_REGION:us-east-1}
+      secret: ${ANALYTICS_WS_GATEWAY_SECRET:}
 
 management:
   endpoints:
